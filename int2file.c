@@ -81,7 +81,13 @@ int main (int argc, char *argv[]) {
   // Set the user-defined base, or default to 10 (decimal)
   if (argc > 2) {
     //base = atoi(argv[1]);
-    base = (int)(argv[1][0] - '0');
+    int bufferquesize = 0;
+    int i;
+    for (i = 0; argv[1][i] != '\0'; ++i) {
+      bufferquesize *= 10;
+      bufferquesize += argv[1][i] - '0';
+    }
+    base = bufferquesize;
   } else {
     base = 10;
   }
