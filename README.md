@@ -14,3 +14,6 @@ bitcat is a small C application to print the stream of bits comprising an input 
 
 bwrite is a small C application to write a single byte, by its decimal integer value (0-255) into a file. It asks the user for the decimal integer value of the byte to write, and can either write a new file or append the single byte to an existing file with the '-a' option.
 
+## int2file
+
+in2file uses the [GMP library](http://www.libgmp.org/) to read a decimal integer from stdin and write the integer as binary to an output file. This is meant to act as a proof-of-concept that in fact all computer files may in fact be represented as a single number. It may also be used to convert numbers to files, such as the [Illegal Prime](https://en.wikipedia.org/wiki/Illegal_prime)
