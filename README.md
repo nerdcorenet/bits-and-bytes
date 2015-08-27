@@ -22,7 +22,6 @@ If int2file is executed as `file2int` it does the opposite - It reads the file s
 
 int2file.c uses libgmp and must be compiled with `-lgmp` such as:
 
-`
-gcc -o int2file int2file.c -lgmp
-ln int2file file2int
-`
+    gcc -o int2file int2file.c -lgmp
+    ln int2file file2int
+
