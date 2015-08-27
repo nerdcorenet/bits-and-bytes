@@ -79,8 +79,9 @@ int main (int argc, char *argv[]) {
   }
 
   // Set the user-defined base, or default to 10 (decimal)
-  if (argc > 1) {
-    base = atoi(argv[1]);
+  if (argc > 2) {
+    //base = atoi(argv[1]);
+    base = (int)(argv[1][0] - '0');
   } else {
     base = 10;
   }
