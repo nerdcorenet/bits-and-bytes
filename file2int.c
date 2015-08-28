@@ -55,7 +55,7 @@ int main (int argc, char *argv[]) {
   filename = *(++argv);
   file = fopen(filename, filemode);
   if (file == NULL) {
-    printf("Unable to open file %s\n", filename);
+    fprintf(stderr, "Unable to open file %s\n", filename);
     exit(-1);
   }
 
@@ -69,6 +69,10 @@ int main (int argc, char *argv[]) {
       bufferquesize += argv[1][i] - '0';
     }
     base = bufferquesize;
+    if (base < 2 || base > 62) {
+      fprintf(stderr, "ERROR: Base out of range.\n");
+      usage(cmd);
+    }
   } else {
     base = 10;
   }
@@ -117,7 +121,7 @@ int main (int argc, char *argv[]) {
 void usage(char* cmd) {
   printf("Usage: %s FILENAME [BASE]\n\n", cmd);
   printf("  Read FILENAME and display it on STDOUT as a single unsigned integer of base BASE.\n");
-  printf("  BASE is optional. Default is base 10.\n");
+  printf("  BASE is optional. Valid values range 2-62. Default is base 10.\n");
 
   exit(-1);
 }
