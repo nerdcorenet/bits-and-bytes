@@ -22,7 +22,11 @@ int2file uses the [GMP library](http://www.gmplib.org/) to read a decimal intege
 
 file2int reads the file specified on the command line and prints it to STDOUT. It accepts an optional command line argument to represent the numeric base which can range from 2-62 (default 10).
 
-int2file.c and file2int.c use libgmp and must be compiled with `-lgmp` such as:
+## b2flop
+
+b2flop calculates the height of a stack of DOS-formatted floppy disks required to store N bytes.
+
+b2flop.c, int2file.c, and file2int.c use libgmp and must be compiled with `-lgmp` such as:
 
     gcc -o int2file int2file.c -lgmp
 
