@@ -25,8 +25,3 @@ file2int reads the file specified on the command line and prints it to STDOUT. I
 ## b2flop
 
 b2flop calculates the height of a stack of DOS-formatted floppy disks required to store N bytes.
-
-b2flop.c, int2file.c, and file2int.c use libgmp and must be compiled with `-lgmp` such as:
-
-    gcc -o int2file int2file.c -lgmp
-
