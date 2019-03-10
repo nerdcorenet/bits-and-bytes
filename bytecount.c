@@ -68,7 +68,7 @@ int main (int argc, char *argv[]) {
 
   printf("\n");
   printf("Number of unique bytes: %d\n", uniques);
-  printf("Bytes not appearing in this file: %s\n", missing);
+  printf("Bytes not appearing in this file:%s\n", missing);
 
   fclose(infile);
   exit(1);
