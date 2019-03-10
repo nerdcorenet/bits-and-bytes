@@ -6,6 +6,10 @@ A collection of small programs to deal with bits and bytes in a variety of ways.
 
 bitcount is a small C application to count the bits (zeroes and ones) of an input stream such as a file. It displays statistical data such as the longest consecutive string of 0s and 1s, as well as the overall 0:1 ratio for the input.
 
+## bytecount
+
+Like bitcount, bytecount collects and displays some byte-level heuristics about an input file, such as number of occurances of each byte (0x00 - 0xFF) and number of unique bytes.
+
 ## bitcat
 
 bitcat is a small C application to print the stream of bits comprising an input such as a file. It can print in 8-bit (1-byte) columns or unseparated stream of bits, and can output either "01" or ".-" (Morse Code) output.
