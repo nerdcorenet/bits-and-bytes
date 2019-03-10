@@ -34,13 +34,23 @@ int main (int argc, char *argv[]) {
   if (infile == NULL) {
     printf("Unable to open file %s\n", filename);
     exit(-1);
+  } else {
+    // Check for zero-length
+    fseek(infile, 0L, SEEK_END);
+    if (ftell(infile) == 0) {
+      // ERROR: Zero-length file
+      printf("Nothing to read (zero-length): %s\n", filename);
+      exit(-1);
+    }
+    fseek(infile, 0L, SEEK_SET);
   }
 
   // Setup variables
-  int c; // Current byte
+  unsigned int c; // Current byte
   int i; // Iterator
-  unsigned char uniques = 0; // Number of unique bytes
+  unsigned int uniques = 0; // Number of unique bytes
   char missing[1280] = ""; // " 0xNN"=5 chars; (256 * 5) = 1280
+  unsigned char most; // Most common byte
   // We will use this in the iterative loop to count occurances of
   // each possible byte
   unsigned long bytes[256];
@@ -68,7 +78,10 @@ int main (int argc, char *argv[]) {
 
   printf("\n");
   printf("Number of unique bytes: %d\n", uniques);
-  printf("Bytes not appearing in this file:%s\n", missing);
+  if (uniques < 256)
+    printf("Bytes not appearing in this file:%s\n", missing);
+  else
+    printf("All possible byte values exist in this file.\n");
 
   fclose(infile);
   exit(1);
