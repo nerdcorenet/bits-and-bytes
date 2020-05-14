@@ -23,3 +23,6 @@ int2file: int2file.c
 
 clean:
 	$(RM) b2flop bitcat bitcount bytecount bwrite file2int int2file
+
+install:
+	install b2flop bitcat bitcount bytecount bwrite file2int int2file /usr/local/bin
