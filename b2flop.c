@@ -57,11 +57,11 @@ int main (int argc, char *argv[]) {
   mpz_mul(mm, floppies, mmpf);
 
   mpz_out_str(stdout, 10, bytes);
-  printf("b = ");
+  printf(" bytes = ");
   mpz_out_str(stdout, 10, floppies);
-  printf("floppies = ");
+  printf(" floppies = ");
   mpz_out_str(stdout, 10, mm);
-  printf("mm\n");
+  printf(" mm\n");
 
   exit(0);
 }
