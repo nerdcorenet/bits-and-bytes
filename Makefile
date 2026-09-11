@@ -1,4 +1,4 @@
-all: b2flop bitcat bitcount bytecount bwrite file2int int2file
+all: b2flop bitcat bitcount bytecount bwrite file2int int2file intinverter
 
 b2flop: b2flop.c
 	gcc -o b2flop b2flop.c -lgmp
@@ -21,8 +21,11 @@ file2int: file2int.c
 int2file: int2file.c
 	gcc -o int2file int2file.c -lgmp
 
+intinverter: intinverter.c
+	gcc -o intinverter intinverter.c
+
 clean:
-	$(RM) b2flop bitcat bitcount bytecount bwrite file2int int2file
+	$(RM) b2flop bitcat bitcount bytecount bwrite file2int int2file intinverter
 
 install:
-	install b2flop bitcat bitcount bytecount bwrite file2int int2file /usr/local/bin
+	install b2flop bitcat bitcount bytecount bwrite file2int int2file intinverter /usr/local/bin
